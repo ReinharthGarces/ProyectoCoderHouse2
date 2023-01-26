@@ -20,7 +20,7 @@ alert("Cliente: " + informacionCliente)
 
 //Metodos de pago
 
-const metodoDePago = parseInt(prompt("Indiquenos el metodo de pago que desea utilizar: Ingrese 1 para Tarjeta de debito, ingrese 2 para tarjeta de credito:"))
+const metodoDePago = parseInt(prompt("Indiquenos el metodo de pago que desea utilizar: \n\n 1- Tarjeta de debito \n 2- Tarjeta de credito"))
   let cantidadDeCuotas = 0
 
 switch (metodoDePago) {
