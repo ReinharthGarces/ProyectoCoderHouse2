@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular'
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* --- Header --- */
+
+header {
+    background-color: cadetblue;
+    padding: 5vh;
+}
+header h1 {
+    display: inline-block;
+    width: 85%;
+}
+
+header nav {
+    display: inline-block;
+}
+
+header ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* --- Tarjeta --- */
+
+.tarjeta {
+    background-color: rgb(74, 126, 128);
+    color: white;
+    display: inline-block;
+    margin: 10vh;
+    width: 250px;
+    height: 325px;
+    border-radius: 20px;
+    border: 8px solid rgba(0, 0, 0, 0.485);
+    overflow: hidden;
+}
+
+.tarjeta img {
+    width: 100%;
+}
+
+.tarjeta h3 {
+    text-align: center;
+}
+
+.tarjeta span {
+    font-size: 1.6rem;
+    display: block;
+    text-align: center;
+}
+
+.sumarCarrito {
+    background-color: rgb(74, 126, 128);
+    padding: 8px 10px;
+    display: inline-block;
+    color: black;
+    margin: 15px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.objetosCarrito {
+  background-color: red;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 0.5em;
+}
