@@ -1,0 +1,22 @@
+[
+  {
+    "imagen": "/img/tele.jpg",
+    "nombre": "TV 60",
+    "precio": 2000,
+    "stock": 5
+  },
+
+  {
+    "imagen": "/img/tele.jpg",
+    "nombre": "TV 40",
+    "precio": 1000,
+    "stock": 4
+  },
+
+  {
+    "imagen": "/img/tele.jpg",
+    "nombre": "TV 32",
+    "precio": 500,
+    "stock": 6
+  }
+]

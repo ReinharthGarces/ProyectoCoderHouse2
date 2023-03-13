@@ -18,7 +18,7 @@ header {
 }
 header h1 {
     display: inline-block;
-    width: 85%;
+    width: 80%;
 }
 
 header nav {
@@ -30,35 +30,42 @@ header ul li {
     margin-right: 15px;
 }
 
-/* --- Tarjeta --- */
+/* --- Productos --- */
 
-.tarjeta {
+#listadoDeProductos {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#listadoDeProductos div{
     background-color: rgb(74, 126, 128);
     color: white;
     display: inline-block;
     margin: 10vh;
-    width: 250px;
-    height: 325px;
+    width: 300px;
+    height: 450px;
     border-radius: 20px;
     border: 8px solid rgba(0, 0, 0, 0.485);
     overflow: hidden;
 }
 
-.tarjeta img {
+#listadoDeProductos img {
     width: 100%;
 }
 
-.tarjeta h3 {
+#listadoDeProductos h2 {
+    padding: 3%;
     text-align: center;
 }
 
-.tarjeta span {
+#listadoDeProductos h3 {
     font-size: 1.6rem;
     display: block;
     text-align: center;
 }
 
-.sumarCarrito {
+#listadoDeProductos button {
     background-color: rgb(74, 126, 128);
     padding: 8px 10px;
     display: inline-block;
@@ -68,7 +75,7 @@ header ul li {
     border-radius: 20px;
 }
 
-.objetosCarrito {
+#listadoDeProductos span {
   background-color: red;
   display: inline-block;
   border: 2px solid black;
