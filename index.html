@@ -12,51 +12,32 @@
 </head>
 
 <body>
-    <header>
-        <h1>Reinharth Garces</h1>
-        <nav>
-            <ul>
-                <li><a href="">Productos</a></li>
-                <li><a href="">Galeria</a></li>
-                <li><a href="">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Creacion del Header -->
+  <header>
+    <h1>Reinharth Garces</h1>
+    <nav>
+        <ul>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Galeria</a></li>
+            <li><a href="">Contacto</a></li>
+        </ul>
+    </nav>
+  </header>
 
-  <main>
-    <div id="listadoDeProductos">
+  <h1>Listado De Productos</h1>
+  <div class="productos">
+    <ul id="lista-productos"></ul>
+  </div>
 
-    </div>
-        <!-- <div class="tarjeta">
-            <img src="./img/tele.jpg" alt="Television en venta">
-            <h3>TV 60"</h3>
-            <span>$200.000</span>
-            <button class="sumarCarrito">Sumar al carrito</button>
-            <a href="" class="objetosCarrito">0</a>
-        </div> -->
-
-        <!-- <div class="tarjeta">
-          <img src="./img/tele.jpg" alt="Television en venta">
-          <h3>TV 40"</h3>
-          <span>$100.000</span>
-          <button class="sumarCarrito">Sumar al carrito</button>
-          <a href="" class="objetosCarrito">0</a>
-      </div>
-
-      <div class="tarjeta">
-        <img src="./img/tele.jpg" alt="Television en venta">
-        <h3>TV 32"</h3>
-        <span>$50.000</span>
-        <button class="sumarCarrito">Sumar al carrito</button>
-        <a href="" class="objetosCarrito">0</a>
-    </div> -->
-  </main>
+  <div class="carrito">
+    <h2>Carrito De Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $ <span id="total"> </span></p>
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src=" https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
 <script src="./js/main.js"></script>
-
 </body>
 
 </html>
