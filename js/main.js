@@ -41,6 +41,7 @@ fetch('productos.json')
     botonesAgregarCarrito.forEach(boton => {
       boton.addEventListener('click', () => {
     
+      // Agrego notificacion al elimiar producto
         Toastify({
           text: "Producto agregado...",
           offset: {
@@ -86,7 +87,6 @@ fetch('productos.json')
           carrito.push(producto);
         }
         
-
         // Actualizar carrito en el DOM
         actualizarCarrito()
       });
@@ -124,36 +124,32 @@ function actualizarCarrito() {
       // Obtener ID del producto a eliminar
       const id = boton.dataset.id;
 
+      // Agrego notificacion al elimiar producto
+      Toastify({
+        text: "Producto eliminado...",
+        offset: {
+          x: 20, 
+          y: 210,
+        },
+        duration: 1500,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", 
+        position: "left", 
+        stopOnFocus: true, 
+        style: {
+          borderRadius: "10px",
+          background: "#f44336",                        
+        },
+      }).showToast();
+
     // Funciones de orden superior
     // Eliminar producto del carrito
       carrito = carrito.filter(producto => producto.id !== id);
 
-    //Descuento stock del producto
-    listaCarrito.descontarStock()
     // Actualizar carrito en el DOM
       actualizarCarrito();
     });
   });
 }
-
-
-    //   function productoTieneStock (listaProductos) {
-    //     return listaProductos.stock >= 1;
-    // }
-    //       // Chequeamos si el producto tiene stock
-    //       if(productoTieneStock(listaProductos)) {
-
-    //         // Le sumo uno a la cantidad
-    //         carrito++;
-  
-    //         // Descuento stock del producto
-    //         listaProductos.descontarStock();  
-    //     } else {  
-    //       Swal.fire({
-    //         title: 'Lo sentimos!',
-    //         text: 'NO tenemos mas unidades disponibles del producto seleccionado.',
-    //         icon: 'error',
-    //         confirmButtonText: 'Cerrar',
-    //         })
-    //     }
-      
