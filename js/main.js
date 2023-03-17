@@ -21,10 +21,11 @@ fetch('productos.json')
     data.forEach(producto => {
       htmlProductos += `
       <li>
+      <img src=${producto.imagen}> 
       <h3>${producto.nombre}</h3>
-      <p>Precio: $${producto.precio}</p>
-      <p>Stock: ${producto.stock}</p>
-      <label>Cantidad:</label>
+      <p><strong>Precio:</strong> $${producto.precio}</p>
+      <p><strong>Stock:</strong> ${producto.stock}</p>
+      <label><strong>Cantidad:</strong></label>
       <input type="number" min="1" max="${producto.stock}" value="1" class="cantidad">
       <button class="agregar-carrito" data-id="${producto.id}" data-nombre="${producto.nombre}" data-precio="${producto.precio}" data-stock="${producto.stock}">Agregar al carrito</button>
     </li>
@@ -42,6 +43,10 @@ fetch('productos.json')
     
         Toastify({
           text: "Producto agregado...",
+          offset: {
+            x: 20, 
+            y: 210,
+          },
           duration: 1500,
           destination: "https://github.com/apvarun/toastify-js",
           newWindow: true,
@@ -50,12 +55,14 @@ fetch('productos.json')
           position: "right", 
           stopOnFocus: true, 
           style: {
-            backgroundColor: "rgb(74, 126, 128);",
+            borderRadius: "10px",
+            background: "#4CAF50",                        
           },
         }).showToast();
         
         // Obtener información del producto
         const id = boton.dataset.id;
+        const imagen = boton.dataset.imagen;
         const nombre = boton.dataset.nombre;
         const precio = Number(boton.dataset.precio);
         const stock = Number(boton.dataset.stock);
@@ -65,11 +72,12 @@ fetch('productos.json')
         // Agregar producto al carrito
         const producto = {
           id: id,
+          imagen: imagen,
           nombre: nombre,
           precio: precio,
-          cantidad: 1,
+          cantidad: cantidad,
           stock: stock,
-        };
+        }
 
         const productoExistente = carrito.find(item => item.id === id);
         if (productoExistente) {
@@ -77,13 +85,13 @@ fetch('productos.json')
         } else {
           carrito.push(producto);
         }
+        
 
         // Actualizar carrito en el DOM
-        actualizarCarrito();
+        actualizarCarrito()
       });
     });
   })
-
 
 // Funciones
 // Actualizar el carrito en el DOM
@@ -120,6 +128,8 @@ function actualizarCarrito() {
     // Eliminar producto del carrito
       carrito = carrito.filter(producto => producto.id !== id);
 
+    //Descuento stock del producto
+    listaCarrito.descontarStock()
     // Actualizar carrito en el DOM
       actualizarCarrito();
     });
@@ -127,3 +137,23 @@ function actualizarCarrito() {
 }
 
 
+    //   function productoTieneStock (listaProductos) {
+    //     return listaProductos.stock >= 1;
+    // }
+    //       // Chequeamos si el producto tiene stock
+    //       if(productoTieneStock(listaProductos)) {
+
+    //         // Le sumo uno a la cantidad
+    //         carrito++;
+  
+    //         // Descuento stock del producto
+    //         listaProductos.descontarStock();  
+    //     } else {  
+    //       Swal.fire({
+    //         title: 'Lo sentimos!',
+    //         text: 'NO tenemos mas unidades disponibles del producto seleccionado.',
+    //         icon: 'error',
+    //         confirmButtonText: 'Cerrar',
+    //         })
+    //     }
+      
