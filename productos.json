@@ -15,7 +15,7 @@
   },
   {
     "id": "003",
-    "imagen": "/img/tele.jpg",
+    "imagen": "./img/tele.jpg",
     "nombre": "TV 60",
     "precio": 7600,
     "stock": 8
