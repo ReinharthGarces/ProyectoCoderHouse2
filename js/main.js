@@ -42,7 +42,6 @@ fetch('productos.json')
       boton.addEventListener('click', () => {
     
       // Agrego notificacion al elimiar producto
-      // Agrego notificacion al elimiar producto
         Toastify({
           text: "Producto agregado...",
           offset: {
@@ -145,26 +144,7 @@ function actualizarCarrito() {
         },
       }).showToast();
 
-      // Agrego notificacion al elimiar producto
-      Toastify({
-        text: "Producto eliminado...",
-        offset: {
-          x: 20, 
-          y: 210,
-        },
-        duration: 1500,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "bottom", 
-        position: "left", 
-        stopOnFocus: true, 
-        style: {
-          borderRadius: "10px",
-          background: "#f44336",                        
-        },
-      }).showToast();
-
+    // Funcion de orden superior
     // Eliminar producto del carrito
       carrito = carrito.filter(producto => producto.id !== id);
 
