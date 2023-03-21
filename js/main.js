@@ -144,7 +144,6 @@ function actualizarCarrito() {
         },
       }).showToast();
 
-    // Funciones de orden superior
     // Eliminar producto del carrito
       carrito = carrito.filter(producto => producto.id !== id);
 
